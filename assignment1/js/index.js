@@ -7,10 +7,6 @@ const numberVariable = 10;
 console.log("numberVariable:", typeof numberVariable);
 console.log(numberVariable);
 
-const bigintVariable = 12345678901234;
-console.log("bigintVariable:", typeof bigintVariable);
-console.log(bigintVariable);
-
 const booleanVariable = true;
 console.log("booleanVariable:", typeof booleanVariable);
 console.log(booleanVariable);
