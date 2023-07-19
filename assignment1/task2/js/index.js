@@ -9,10 +9,10 @@ const nullVariable = null;
 const arrayVariable = ["Lion", "Tiger", "Cheetah", "Elephant"];
 const dateVariable = new Date("2023-07-18");
 
-let concatenatedString = `${stringVariable} ${numberVariable} ${booleanVariable} ${bigintVariable}  ${undefinedVariable} ${nullVariable} ${arrayVariable} ${dateVariable}`;
-console.log(`String with template literals :${concatenatedString}`);
+const concatenatedStringwithliterals = `${stringVariable} ${numberVariable} ${booleanVariable} ${bigintVariable}  ${undefinedVariable} ${nullVariable} ${arrayVariable} ${dateVariable}`;
+console.log(`String with template literals :${concatenatedStringwithliterals}`);
 
-concatenatedString =
+const concatenatedStringwithoutliterals =
   stringVariable +
   " " +
   numberVariable +
@@ -29,4 +29,6 @@ concatenatedString =
   " " +
   dateVariable;
 
-console.log("String without template literals :" + concatenatedString);
+console.log(
+  "String without template literals :" + concatenatedStringwithoutliterals,
+);
