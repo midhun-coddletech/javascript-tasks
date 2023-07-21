@@ -11,7 +11,9 @@ console.log(`Length of array after deletion of "6" is ${arrayLength}`);
 // Question b
 
 numArray = ["1", "2", "3", "4", "5", "6", "7"];
-numArray = numArray.map((item) => Number(item));
+numArray.forEach((item, index) => {
+  numArray[index] = Number(item);
+});
 numArray.forEach((item) => {
   console.log(item);
   console.log(typeof item);
