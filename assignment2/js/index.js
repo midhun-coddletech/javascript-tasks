@@ -54,14 +54,12 @@ numArray = ['1', '2', '3', '4', '5', '6', '7'];
 // with one for each do both tasks
 
 let numString = '';
-numArray.forEach((item) => {
-    numString += item;
-});
-console.log(`The string after concatenation ${numString}`);
 let sumofElements = 0;
 numArray.forEach((item) => {
+    numString += item;
     sumofElements += Number(item);
 });
+console.log(`The string after concatenation ${numString}`);
 console.log(`Sum of elements in array is ${sumofElements}`);
 
 // Question e
@@ -102,10 +100,12 @@ console.log(
 numArray = ['1', '2', '3', '4', '5', '6', '7'];
 const arrayTocheck = [1, 2, '3', 4, 5, 6, '7'];
 for (let i = 0; i < numArray.length; i += 1) {
-    if (typeof numArray[i] === typeof arrayTocheck[i]) {
-        console.log(
-            `${numArray[i]} and ${arrayTocheck[i]} have the same datatype`
-        );
+    for (let j = 0; j < arrayTocheck.length; j += 1) {
+        if (typeof numArray[i] === typeof arrayTocheck[j]) {
+            console.log(
+                `${numArray[i]} and ${arrayTocheck[j]} have the same datatype`
+            );
+        }
     }
 }
 
