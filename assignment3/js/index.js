@@ -7,16 +7,56 @@ console.log(
 );
 const switchArray = ['car', 1, 5, 'js', 'node js', 'mysql', 'sql'];
 
-switchArray.map((item, arr) => {
-    switch (arr) {
-    case arr:
-        console.log(item);
-        break;
-    default:
-        console.log('Empty array');
+switchArray.map((item, index) => {
+    switch (index) {
+        case index:
+            console.log(item);
+            break;
+        default:
+            break;
     }
     return item;
 });
+
+// Question 2
+
+console.log(
+    `\nQuestion 2: [1, 2, 3, 4. 5, 6] : Write a closure function to delete indexes 5 and 2 of this array.\n`
+);
+
+function deleteIndex(closureArray) {
+    const index1 = 5;
+    const index2 = 2;
+    return function () {
+        return closureArray.filter(
+            (item, index) => index !== index1 && index !== index2
+        );
+    };
+}
+const closureArray = [1, 2, 3, 4, 5, 6];
+const arrayafterDelete = deleteIndex(closureArray)();
+console.log('Array after deletion: ', arrayafterDelete);
+
+// Question 3
+
+console.log(
+    `\nQuestion 3: Use constructor method to console all elements of the passed array. (the array will be passed to the constructor method)\n`
+);
+
+function ConsoleArray(array) {
+    this.array = array;
+
+    this.logElements = function () {
+        this.array.forEach((element) => {
+            console.log(element);
+        });
+    };
+}
+
+const myArray = [1, 2, 3, 4, 5, 6];
+const outputArray = new ConsoleArray(myArray);
+
+outputArray.logElements();
 
 // Question 4
 
@@ -47,18 +87,47 @@ console.log(
     console.log(`My name is ${myName}`);
 })();
 
+// Question 6
+
+console.log(
+    `\nQuestion 6: {a:'one', b:'2', f:'5', c:'33', p:'do', q:'one' }: Using this object make an array consisting of all the keys of the given object in reverse order. (output should be ['q', 'p', 'c', 'f', 'b', 'a']) \n`
+);
+
+const myObject = { a: 'one', b: '2', f: '5', c: '33', p: 'do', q: 'one' };
+const keyArray = Object.keys(myObject);
+const reversedkeyArray = keyArray.reverse();
+console.log('Reversed key array is', reversedkeyArray);
+
+// Question 7
+
+console.log(
+    `\nQuestion 7: { data: [{a:'one', id:'22'}, {a:'four', id:'7'}, {a:'six', b:'2'},  {a:'sixty', id:'24'},  {a:'five', id:'212'}] } From the given object remove the data array item with id as '24'. (consider that the data arrays order will be different every time you get, so write code in such a way that given any object it will remove the item with id as 24 if it exists )\n`
+);
+
+const dataObject = {
+    data: [
+        { a: 'one', id: '22' },
+        { a: 'four', id: '7' },
+        { a: 'six', b: '2' },
+        { a: 'sixty', id: '24' },
+        { a: 'five', id: '212' }
+    ]
+};
+
+dataObject.data = dataObject.data.filter((item) => item.id !== '24');
+console.log(dataObject);
+
 // Question 8
 
-console.log(`\nQuestion 8: Given var string = "Javascript is the King of the web."
-
-i) Get the count of occurrences of the strings "the" and "of" in string. 
-j) pad string with "*" and set the total length of the string as 30, displayed at right side.\n`);
+console.log(
+    `\nQuestion 8: Given var string = "Javascript is the King of the web.".\n`
+);
 
 // Question 8.a
 
 console.log(`a) Get the length of the string.\n`);
 
-const string = 'Javascript is the King of the web.';
+let string = 'Javascript is the King of the web.';
 console.log(`Length of the string is ${string.length}`);
 
 // Question 8.b
@@ -75,7 +144,7 @@ console.log(`\nc) Execute the above code from browser console. \n`);
 
 // Question 8.d
 
-console.log(`d) Get the position of the word "King" in string. \n`);
+console.log(`\nd) Get the position of the word "King" in string. \n`);
 
 console.log(`Postion of "King" in the string is ${string.indexOf('King') + 1}`);
 
@@ -131,6 +200,10 @@ console.log(
 console.log(
     `\nj) pad string with "*" and set the total length of the string as 30, displayed at right side.\n`
 );
-
+const stringLength = string.length;
+const requiredLegth = 30;
+if (stringLength >= requiredLegth) {
+    string = string.slice(0, requiredLegth - 1);
+}
 const paddedString = string.padEnd(30, '*');
 console.log(`String after padding: ${paddedString}`);
