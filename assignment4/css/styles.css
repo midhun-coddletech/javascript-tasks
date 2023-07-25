@@ -1,0 +1,97 @@
+*{
+    box-sizing: border-box;
+}
+
+.red-div{
+    background-color: red;
+    font-size: 30px;
+    height: 400px;
+    padding: 20px;
+    width: 100%;
+    font-weight: bold;
+    color: white;
+}
+
+.button-container{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-container button{
+    background-color: rgb(37, 66, 152);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.message-div {
+    height: 50px;
+    width: 100%;
+    margin: 30px;
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+}
+
+.select-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#number-select{
+    width: 50px;
+    height: 30px;
+    border: 1px solid;
+}
+
+.language-div{
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    height: 100px;
+}
+
+.tab-title-div{
+    display: flex;
+    justify-content: center;
+    height: 200px;
+}
+
+#title-box{
+    width: 500px;
+    height: 50px;
+    border: 1px solid;
+    outline: none;
+}
+
+#text-submit-btn{
+    width: 200px;
+    height: 50px;
+    border: 1px solid;
+}
+
+.details-form-div {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.details-form-div form {
+    display: grid;
+    grid-gap: 10px;
+}
+
+.details-form-div input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid;
+}
