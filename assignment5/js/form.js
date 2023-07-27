@@ -11,10 +11,12 @@ const companyError = document.getElementById('companyError');
 const pincodeInput = document.getElementById('pincode');
 const pincodeError = document.getElementById('pincodeError');
 const prepopulateBtn = document.getElementById('prepopulateBtn');
+prepopulateBtn.disabled = false;
 prepopulateBtn.addEventListener('click', (event) => {
     event.preventDefault();
     const formData = JSON.parse(localStorage.getItem('formData'));
     if (formData) {
+        document.getElementById('prepopulateBtn').disabled = false;
         nameInput.value = formData.name;
         phoneInput.value = formData.phone;
         placeInput.value = formData.place;
@@ -22,7 +24,6 @@ prepopulateBtn.addEventListener('click', (event) => {
         pincodeInput.value = formData.pincode;
     }
 });
-
 form.addEventListener('submit', (event) => {
     event.preventDefault();
     let isValid = true;
