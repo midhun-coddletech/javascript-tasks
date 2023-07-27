@@ -1,4 +1,6 @@
+/* eslint-disable no-console */
 /* eslint-disable no-undef */
+console.log(`Create a button and div using JS, when clicked on the button your basic details should be shown in the div. The static HTML file should only contain the basic HTML structure, no div/buttons.`);
 const button = document.createElement('button');
 button.textContent = 'Show My Basic Details';
 document.body.appendChild(button);
