@@ -1,11 +1,9 @@
 {
-  "extends": ["airbnb", "prettier", "plugin:node/recommended"],
+  "extends": ["airbnb", "plugin:node/recommended"],
   "parserOptions": {
     "ecmaVersion": 2022
   },
-  "plugins": ["prettier"],
   "rules": {
-    "prettier/prettier": ["error", { "endOfLine": "auto", "singleQuote": true, "tabWidth": 4, "trailingComma": "none"}],
     "spaced-comment": "off",
     "no-console": "warn",
     "consistent-return": "off",
