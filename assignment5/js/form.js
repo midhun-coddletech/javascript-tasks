@@ -62,14 +62,16 @@ form.addEventListener('submit', (event) => {
         pincodeError.innerHTML = 'Pin code cannot be empty &#9888;';
         isValid = false;
     } else if (
-        typeof +pincodeInput.value !== 'number' ||
-        Number.isNaN(+pincodeInput.value)
+        typeof +pincodeInput.value !== 'number'
+        || Number.isNaN(+pincodeInput.value)
     ) {
         pincodeError.innerHTML = 'Pin code should be a number &#9888;';
         isValid = false;
     }
     if (isValid) {
-        const formData = { name, place, phone, company, pincode };
+        const formData = {
+            name, place, phone, company, pincode,
+        };
         localStorage.setItem('formData', JSON.stringify(formData));
         form.reset();
     }
