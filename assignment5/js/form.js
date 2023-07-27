@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 const form = document.getElementById('detailsForm');
-const nameInput = document.getElementById('name');
+const nameInput = document.getElementById('user-name');
 const nameError = document.getElementById('nameError');
 const phoneInput = document.getElementById('phone');
 const phoneError = document.getElementById('phoneError');
@@ -10,6 +10,19 @@ const companyInput = document.getElementById('company');
 const companyError = document.getElementById('companyError');
 const pincodeInput = document.getElementById('pincode');
 const pincodeError = document.getElementById('pincodeError');
+const prepopulateBtn = document.getElementById('prepopulateBtn');
+prepopulateBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    const formData = JSON.parse(localStorage.getItem('formData'));
+    if (formData) {
+        nameInput.value = formData.name;
+        phoneInput.value = formData.phone;
+        placeInput.value = formData.place;
+        companyInput.value = formData.company;
+        pincodeInput.value = formData.pincode;
+    }
+});
+
 form.addEventListener('submit', (event) => {
     event.preventDefault();
     let isValid = true;
@@ -55,9 +68,8 @@ form.addEventListener('submit', (event) => {
         pincodeError.innerHTML = 'Pin code should be a number &#9888;';
         isValid = false;
     }
-
     if (isValid) {
-        const formData = { name, phone, place, company, pincode };
+        const formData = { name, place, phone, company, pincode };
         localStorage.setItem('formData', JSON.stringify(formData));
         form.reset();
     }

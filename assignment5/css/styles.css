@@ -11,7 +11,7 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     max-width: 500px;
     margin: auto;
-    margin-top: 40px;
+    margin-top: 20px;
     padding: 50px;
     background-color: #ffd86d;
   }
@@ -50,4 +50,15 @@ body{
     font-size: 14px;
     margin: 5px 0px;
     height: 20px;
+  }
+
+  #prepopulateBtn{
+    background-color: #457db5;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 15px;
+    margin-bottom: 10px;
+    width: 30%;
   }
