@@ -42,7 +42,7 @@ body{
     cursor: pointer;
 }
 
-#restart-game{
+#restart-btn{
     font-family: 'Edu SA Beginner', cursive;
     font-weight: bold;
     margin: 40px;
@@ -56,6 +56,6 @@ body{
     border-radius: 5px;
 }
 
-#restart-game:hover{
+#restart-btn:hover{
     background-color: #0837b7;
 }
