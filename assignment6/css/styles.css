@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(255, 193, 7);
+}
+
+.game-title{
+    text-align: center;
+    font-family: 'Edu SA Beginner', cursive;
+    font-size: 60px;
+    margin: 40px;
+}
+
+.game-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cell-container{
+    text-align: center;
+    align-items: center;
+    line-height: 120px;
+    display: grid;
+    border: 1px;
+    grid-template-columns: repeat(3,1fr);
+    font-size: 80px;
+    font-family: 'Edu SA Beginner', cursive;
+    font-weight: bold;
+    border: 1px solid;
+}
+
+.cell{
+    border: 1px solid;
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+}
+
+#restart-game{
+    font-family: 'Edu SA Beginner', cursive;
+    font-weight: bold;
+    margin: 40px;
+    width: 150px;
+    height: 60px;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background-color: #2656d9;
+    border-radius: 5px;
+}
+
+#restart-game:hover{
+    background-color: #0837b7;
+}
