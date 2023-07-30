@@ -59,3 +59,12 @@ body{
 #restart-btn:hover{
     background-color: #0837b7;
 }
+
+.result-div{
+    text-align: center;
+    font-family: 'Edu SA Beginner', cursive;
+    font-size: 150px;
+    color: rgb(0, 0, 0);
+    font-weight: bolder;
+    margin: 70px;
+}
