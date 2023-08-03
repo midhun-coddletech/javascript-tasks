@@ -10,26 +10,15 @@
   <!-- Add onclick function -->
   <div class="red-div" id="red-div"></div>
   <div class="button-container">
-      <button id="change-bg">Change Background</button>
+      <button id="change-bg" onclick="changeBg()">Change Background</button>
       <!-- show only one name at a time(instead of show / hide) -->
-      <button id="show-details">Show/Hide Details</button>
-      <button id="hide-div">Hide Div</button>
+      <button id="show-details" onclick="showDetails()">Show Details</button>
+      <button id="hide-div" onclick="hideDiv()">Hide Div</button>
   </div>
   <div class="select-div" id="select-div">
   
   <!-- add the options dynamically -->
-  <select id="number-select">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-      <option value="8">8</option>
-      <option value="9">9</option>
-      <option value="10">10</option>
-    </select>
+  <select id="number-select"></select>
   <div class="message-div" id="message-div"></div>
   </div>
   <div class="button-container" id="button-container"></div>
@@ -42,10 +31,10 @@
   </div>
   <div class="details-form-div">
     <form id="store-cookie-form">
-      <input type="text" id="user-name" placeholder="Your name">
-      <input type="text" id="user-company" placeholder="Your company">
-      <input type="text" id="user-age" placeholder="Your age">
-      <input type="text" id="user-role" placeholder="Your role">
+      <input type="text" name="user-name" placeholder="Your name">
+      <input type="text" name="user-company" placeholder="Your company">
+      <input type="text" name="user-age" placeholder="Your age">
+      <input type="text" name="user-role" placeholder="Your role">
       <input type="submit" id="Submit" value="Submit">
       </form>
   </div>
