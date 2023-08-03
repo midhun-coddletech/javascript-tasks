@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-syntax */
 /* eslint-disable no-multi-assign */
 /* eslint-disable no-undef */
 /* eslint-disable no-alert */
@@ -92,12 +93,26 @@ const form = document.getElementById('store-cookie-form');
 form.addEventListener('submit', (event) => {
     //Check is there any other ways to get all the form data
     event.preventDefault();
+    const keyArray = [];
+    const valueObj = {};
+    const valueArray = [];
     const details = new FormData(form);
+    for (const key of details.keys()) {
+        keyArray.push(key);
+    }
+    for (const value of details.values()) {
+        valueArray.push(value);
+    }
+    valueObj.username = valueArray[0];
+    valueObj.company = valueArray[1];
+    valueObj.age = valueArray[2];
+    valueObj.role = valueArray[3];
     const cookie = {
         name: 'userDetails',
-        value: { username: username, company: company, age: age, role: role },
+        value: valueObj,
         expires: new Date(Date.now() + 100000),
     };
+    console.log(cookie.value);
     document.cookie = cookie;
     console.log('User details have been stored in the cookie.');
     form.reset(); // Added code to clear the form after submit
