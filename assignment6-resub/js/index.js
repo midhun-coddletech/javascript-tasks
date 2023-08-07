@@ -34,11 +34,13 @@ function checkWinner(index, cplayer) {
         if (win[i].every((element) => index.includes(element))) {
             winnerCells = win[i];
             bgCells(winnerCells);
-            setTimeout(endGame, 2000, cplayer, 'Winner!');
+            setTimeout(endGame, 1000, cplayer, 'Winner!');
             if (cplayer === 'X') {
                 document.getElementById('winner-name').style.color = 'rgb(75, 75, 75)';
+                document.getElementById('winner-message').style.color = 'white';
             } else {
                 document.getElementById('winner-name').style.color = 'white';
+                document.getElementById('winner-message').style.color = 'rgb(75, 75, 75)';
             }
             return;
         }
@@ -47,7 +49,7 @@ function checkWinner(index, cplayer) {
         for (let j = 0; j < 9; j += 1) {
             document.getElementById(j).style.backgroundColor = 'rgba(3, 205, 207, 0.1)';
         }
-        setTimeout(endGame, 2000, 'XO', 'Draw!');
+        setTimeout(endGame, 1000, 'XO', 'Draw!');
         document.getElementById('winner-message').innerHTML = 'Draw!';
     }
 }

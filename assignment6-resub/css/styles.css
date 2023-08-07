@@ -41,6 +41,7 @@ body{
     font-size: 60px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
+    cursor: pointer;
 }
 
 .result-div{
