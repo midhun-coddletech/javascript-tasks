@@ -32,13 +32,14 @@ body{
     grid-template-rows: 100px 100px 100px;
     gap: 5px;
     max-height: 500px;
+    margin-bottom: 30px;
 }
 
 .cells{
     background-color: #14bdac;
     display: grid;
     place-items: center;
-    font-size: 60px;
+    font-size: 25px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     cursor: pointer;
@@ -50,10 +51,11 @@ body{
     justify-content: center;
     align-items: center;
     font-family: Arial, Helvetica, sans-serif;
+    height: 300px;
 }
 
 .winner-name{
-    font-size: 150px;
+    font-size: 100px;
 }
 
 .winner-message{
@@ -75,4 +77,34 @@ body{
 
 #restart-btn:hover{
     background-color: #d1d1d1;
+}
+
+.player-name{
+    margin-top: 20px;
+    display: grid;
+    gap: 10px;
+}
+
+.player{
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    padding: 10px;
+    border: none;
+    background-color:  rgb(38, 64, 64);
+    color: white;
+    font-size: 15px;
+    outline: none;
+}
+
+#player-submit{
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: rgb(38, 64, 64);
 }
