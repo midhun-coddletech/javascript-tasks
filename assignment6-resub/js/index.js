@@ -7,19 +7,32 @@ let xIndex = [];
 let oIndex = [];
 let gameStatus = ['', '', '', '', '', '', '', '', ''];
 let currentPlayer = 'X';
+
+const playersArray = function () {
+    const playerOne = document.getElementById('player1').value;
+    const playerTwo = document.getElementById('player2').value;
+    const players = [playerOne, playerTwo];
+    if (players[0].length > 0 && players[1].length > 0) {
+        restartGame(players);
+    }
+};
+
+const submitBtn = document.getElementById('player-submit');
+submitBtn.addEventListener('click', playersArray);
+
 function cellSign(index) {
     const currCell = document.getElementById(index);
     if (currCell.innerHTML === '') {
         if (currentPlayer === 'X') {
             document.getElementById(index).style.color = '#545454';
-            currCell.innerHTML = currentPlayer;
+            currCell.innerHTML = playerOne;
             gameStatus[index] = currentPlayer;
             xIndex.push(index);
             checkWinner(xIndex, currentPlayer);
             currentPlayer = 'O';
         } else {
             document.getElementById(index).style.color = 'white';
-            currCell.innerHTML = currentPlayer;
+            currCell.innerHTML = playerTwo;
             gameStatus[index] = currentPlayer;
             oIndex.push(index);
             checkWinner(oIndex, currentPlayer);
@@ -34,11 +47,12 @@ function checkWinner(index, cplayer) {
         if (win[i].every((element) => index.includes(element))) {
             winnerCells = win[i];
             bgCells(winnerCells);
-            setTimeout(endGame, 1000, cplayer, 'Winner!');
             if (cplayer === 'X') {
+                setTimeout(endGame, 1000, playerOne, 'Winner!');
                 document.getElementById('winner-name').style.color = 'rgb(75, 75, 75)';
                 document.getElementById('winner-message').style.color = 'white';
             } else {
+                setTimeout(endGame, 1000, playerTwo, 'Winner!');
                 document.getElementById('winner-name').style.color = 'white';
                 document.getElementById('winner-message').style.color = 'rgb(75, 75, 75)';
             }
@@ -49,7 +63,7 @@ function checkWinner(index, cplayer) {
         for (let j = 0; j < 9; j += 1) {
             document.getElementById(j).style.backgroundColor = 'rgba(3, 205, 207, 0.1)';
         }
-        setTimeout(endGame, 1000, 'XO', 'Draw!');
+        setTimeout(endGame, 1000, '', 'Draw!');
         document.getElementById('winner-message').innerHTML = 'Draw!';
     }
 }
@@ -70,16 +84,17 @@ function endGame(winner, message) {
     document.getElementById('cell-group').style.display = 'none';
 }
 
-function restartGame() {
+function restartGame(players) {
     for (let i = 0; i < 9; i += 1) {
         document.getElementById(i).innerHTML = '';
         document.getElementById(i).style.pointerEvents = 'auto';
         document.getElementById(i).style.backgroundColor = '#14bdac';
-        currentPlayer = 'X';
-        xIndex = [];
-        oIndex = [];
-        gameStatus = ['', '', '', '', '', '', '', '', ''];
-        document.getElementById('result-div').style.display = 'none';
-        document.getElementById('cell-group').style.display = 'grid';
     }
+    playerOne = players[0];
+    playerTwo = players[1];
+    xIndex = [];
+    oIndex = [];
+    gameStatus = ['', '', '', '', '', '', '', '', ''];
+    document.getElementById('result-div').style.display = 'none';
+    document.getElementById('cell-group').style.display = 'grid';
 }
